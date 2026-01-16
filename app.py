@@ -16,13 +16,29 @@ with tabs[0]:
     orig_text = st.text_area("Content", height=220, placeholder="Paste logs/steps here...", key="text_input")
 
     # optional file upload
-    st.write("Optional: upload a .txt log file")
-    uploadedFile = st.file_uploader("Upload your log here", type=['txt'])
+    st.write("Optional: upload your file")
+    uploadedFile = st.file_uploader(
+        "Upload your log here",
+        type=['txt', 'json', 'csv']
+        )
     if uploadedFile:
+        file_name = uploadedFile.name.lower()
         try:
-            uploadedText = uploadedFile.read().decode("utf-8", errors="replace")
+            if file_name.endswith(".txt"):
+                textFile = uploadedFile.read().decode("utf-8", errors="replace")
+
+            elif file_name.endswith(".json"):
+                import json
+                jsonFile = json.load(uploadedFile)
+                textFile = [item["text"] for item in jsonFile]
+
             # If the user already typed something
-            orig_text = (orig_text + "\n\n" + uploadedText) if orig_text else uploadedText
+            if isinstance(textFile, list):
+                # JSON batch mode: keepong orig_text as list of string
+                orig_text = ([orig_text] if orig_text else []) + textFile
+            else:
+                # txt/csv mode: keep orig_text as string
+                orig_text = (orig_text + "\n\n" + textFile) if orig_text else textFile
 
             st.success(f"File {uploadedFile.name} uploaded.\n\nThe description content will be added to the file.")
         except Exception as e:
@@ -30,13 +46,39 @@ with tabs[0]:
 
     # Button
     if st.button("🔍 Redaction"):
-        redacted, count = redact(orig_text)
+
+        # orig_text can be string or list
+        texts = orig_text if isinstance(orig_text, list) else [orig_text]
+
+        results = []
+        total_count = 0
+
+        for i, text in enumerate(texts, start=1):
+
+            if not isinstance(text, str):
+                text = str(text)
+
+            redacted_text, predicted_sensitive = redact(text)
+            redacted_text, count = redact(text)
+            total_count += int(count)
+
+            results.append({
+                "id": i,
+                "text": text,
+                "redacted_text": redacted_text,
+                "count": int(count)
+            })
+            # redacted_text, predicted_sensitive = redact(text)
+            # st.write("DEBUG type:", type(predicted_sensitive), "value:", predicted_sensitive)
+
+
+        st.json(results)
 
         st.session_state["preview"] = {
             "title": title,
             "original": orig_text,
-            "redacted": redacted,
-            "count": count
+            "results": results,
+            "count": total_count
         }
 
 
@@ -47,7 +89,7 @@ with tabs[0]:
         # save
         saveReport({
             "title": pv["title"],
-            "redacted_text": pv["redacted"],
+            "redacted_text": pv["results"],
             "found_count": pv["count"],
         })
         st.success("Saved.")
@@ -71,7 +113,7 @@ with tabs[0]:
             st.code(previewText["original"], language="text")
         with col2:
             st.write("**Redacted (to be saved)**")
-            st.code(previewText["redacted"], language="text")
+            st.code(previewText["results"], language="text")
 
         st.info("Click **Save Report**. Otherwise, edit and preview again.")
 
