@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "text": "Error reported by john_doe92@gmail.com from 192.168.1.10",
+        "true_sensitive": [
+            "email",
+            "ip"
+        ]
+    },
+    {
+        "id": 2,
+        "text": "API key sk-39dkf93jf93jf was exposed in the logs",
+        "true_sensitive": [
+            "api_key"
+        ]
+    },
+    {
+        "id": 3,
+        "text": "Call me at (703) 555-8123 tomorrow",
+        "true_sensitive": [
+            "phone"
+        ]
+    },
+    {
+        "id": 4,
+        "text": "Your credit card number must be changed to 1234 5678 9876 5432",
+        "true_sensitive": [
+            "credit_card"
+        ]
+    },
+    {
+        "id": 5,
+        "text": "My academic email is Mshabani@gmu.edu",
+        "true_sensitive": [
+            "email"
+        ]
+    },
+    {
+        "id": 6,
+        "text": "We should send our request to admin@mail.company.org",
+        "true_sensitive": ["email"]
+    },
+    {
+        "id": 7,
+        "text": "Use this session token a9f3KlmQ02xPZ91mQwX8",
+        "true_sensitive": ["api_key"]
+    },
+    {
+        "id": 8,
+        "text": "please send it to sara_1998@yahoo.com",
+        "true_sensitive": ["email"]
+    },
+    {
+        "id": 9,
+        "text": "Check api_key=7F3dK92LmQ81Zx for me",
+        "true_sensitive": ["api_key"]
+    },
+    {
+        "id": 10,
+        "text": "ip & port number: 192.168.1.10:8080",
+        "true_sensitive": ["ip"]
+    },
+    {
+        "id": 11,
+        "text": "an other email address : mitra.shabani+test@gmail.com",
+        "true_sensitive": ["email"]
+    },
+    {
+        "id": 12,
+        "text": "Call me on 703-555-8123 ASAP",
+        "true_sensitive": ["phone"]
+    },
+    {
+        "id": 13,
+        "text": "mitra [dot] shabani (at) gmail [dot] com",
+        "true_sensitive": ["email"]
+    },
+    {
+        "id": 14,
+        "text": "WARNING: invalid api token sk_live_83jdk29dk",
+        "true_sensitive": ["api_key"]
+    },
+    {
+        "id": 15,
+        "text": "Was 7035558123 your phone number?",
+        "true_sensitive": ["phone"]
+    },
+    {
+        "id": 16,
+        "text": "John.DOE@Example.COM",
+        "true_sensitive": ["email"]
+    },
+    {
+        "id": 17,
+        "text": "Access key has changed to AKIA9F3KLMQ02X8Z91AB",
+        "true_sensitive": ["api_key"]
+    },
+    {
+        "id": 18,
+        "text": " Please inform them (703) 555-1111",
+        "true_sensitive": ["phone"]
+    },
+    {
+        "id": 19,
+        "text": "https://example.com/reset?email=john.doe@gmail.com",
+        "true_sensitive": ["email"]
+    },
+    {
+        "id": 20,
+        "text": "User contact: helpdesk@support.io",
+        "true_sensitive": ["email"]
+    },
+    {
+        "id": 21,
+        "text": "key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XYZ123.SIGNATURE",
+        "true_sensitive": ["api_key"]
+    },
+    {
+        "id": 22,
+        "text": "ip & subnet mask: 192.168.1.0/24",
+        "true_sensitive": ["ip"]
+    },
+    {
+        "id": 23,
+        "text": "private network eange: 10.0.0.5",
+        "true_sensitive": ["ip"]
+    },
+    {
+        "id": 24,
+        "text": "Customer used card 3782 822463 10005",
+        "true_sensitive": ["credit_card"]
+    },
+    {
+        "id": 25,
+        "text": "card: 4111-1111-1111-1111",
+        "true_sensitive": ["credit_card"]
+    }
+]

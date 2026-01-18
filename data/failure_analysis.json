@@ -1,0 +1,75 @@
+[
+  {
+    "id": 4,
+    "true_type": "credit_card",
+    "predicted_type": "phone",
+    "error_kind": "misclassification",
+    "pattern": "16-digit grouped",
+    "risk": "high",
+    "note": "CC detected as PHONE tokens"
+  },
+  {
+    "id": 9,
+    "true_type": "api_key",
+    "error_kind": "missed_detection",
+    "pattern": "short token with api_key prefix",
+    "risk": "high",
+    "note": "API key not detected at all"
+  },
+  {
+    "id": 10,
+    "true_type": "ip_with_port",
+    "error_kind": "partial_redaction",
+    "pattern": "ipv4_with_port",
+    "risk": "medium",
+    "note": "IP redacted but port number left intact"
+  },
+  {
+    "id": 13,
+    "true_type": "email",
+    "error_kind": "missed_detection",
+    "pattern": "obfuscated_email",
+    "risk": "high",
+    "note": "Email written as [dot] and (at) not detected"
+  },
+  {
+    "id": 14,
+    "true_type": "api_key",
+    "error_kind": "over_redaction",
+    "pattern": "keyword_removed_with_secret",
+    "risk": "medium",
+    "note": "Non-sensitive word 'token' removed along with API key, reducing readability"
+  },
+  {
+    "id": 17,
+    "true_type": "cloud_access_key",
+    "error_kind": "missed_detection",
+    "pattern": "aws_style_key",
+    "risk": "high",
+    "note": "AWS-style access key not detected"
+  },
+  {
+    "id": 21,
+    "true_type": "jwt_token",
+    "error_kind": "partial_redaction",
+    "pattern": "dot_separated_token",
+    "risk": "high",
+    "note": "Only first segment redacted; rest of token still visible"
+  },
+  {
+    "id": 22,
+    "true_type": "ip_with_subnet",
+    "error_kind": "partial_redaction",
+    "pattern": "ipv4_cidr",
+    "risk": "medium",
+    "note": "IP redacted but subnet mask left visible"
+  },
+  {
+    "id": 25,
+    "true_type": "credit_card",
+    "error_kind": "misclassification_and_split",
+    "pattern": "grouped_16_digit_number",
+    "risk": "high",
+    "note": "Credit card split and misclassified as two phone numbers"
+  }
+]
