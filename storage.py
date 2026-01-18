@@ -1,30 +1,41 @@
 import json
 from pathlib import Path
 from typing import Dict, List
+import re
 
-# DB = Path("reports.json")
-DB = Path(__file__).resolve().parent / "reports.json"
+# DB = Base Path
+DB = Path(__file__).resolve().parent / "data"
 
 
-def _loadAll() -> List[Dict]:
+def safe_filename(name: str) -> str:
+    name = name.strip().lower()
+    name = re.sub(r"[^a-z0-9_\- ]", "", name)
+    name = name.replace(" ", "_")
+    return name or "results"
 
-    if not DB.exists():
+def _loadAll(path: Path) -> List[Dict]:
+
+    if not path.exists():
         return []
 
     try:
-        return json.loads(DB.read_text(encoding="utf-8"))
+        return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return []
 
-def _saveAll(items: List[Dict]) -> None:
+def _saveAll(path: Path, items: List[Dict]) -> None:
 
     jsonString = json.dumps(items, indent=2, ensure_ascii=False)
-    DB.write_text(jsonString, encoding="utf-8")
+    path.write_text(jsonString, encoding="utf-8")
 
-def saveReport(report: Dict) -> None:
-    all_items = _loadAll()
-    all_items.append(report)
-    _saveAll(all_items)
+def saveReport(results: Dict) -> None:
+    title = results.get("title", "results")
+    filename = safe_filename(title) + ".json"
+    file_path = DB / filename
+
+    all_items = _loadAll(file_path)
+    all_items.append(results)
+    _saveAll(file_path, all_items)
 
 # def listReports() -> List[Dict]:
 #      return _loadAll()
