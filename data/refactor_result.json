@@ -1,0 +1,158 @@
+[
+  {
+    "title": "refactor_result",
+    "redacted_text": [
+      {
+        "id": 1,
+        "text": "Error reported by john_doe92@gmail.com from 192.168.1.10",
+        "redacted_text": "Error reported by [REDACTED:EMAIL:20] from [REDACTED:IPV4:12]",
+        "count": 2
+      },
+      {
+        "id": 2,
+        "text": "API key sk-39dkf93jf93jf was exposed in the logs",
+        "redacted_text": "API [REDACTED:API_KEY:20] was exposed in the logs",
+        "count": 1
+      },
+      {
+        "id": 3,
+        "text": "Call me at (703) 555-8123 tomorrow",
+        "redacted_text": "Call me at ([REDACTED:PHONE:13] tomorrow",
+        "count": 1
+      },
+      {
+        "id": 4,
+        "text": "Your credit card number must be changed to 1234 5678 9876 5432",
+        "redacted_text": "Your credit card number must be changed to [REDACTED:CREDIT_CARD:19]",
+        "count": 1
+      },
+      {
+        "id": 5,
+        "text": "My academic email is Mshabani@gmu.edu",
+        "redacted_text": "My academic email is [REDACTED:EMAIL:16]",
+        "count": 1
+      },
+      {
+        "id": 6,
+        "text": "We should send our request to admin@mail.company.org",
+        "redacted_text": "We should send our request to [REDACTED:EMAIL:22]",
+        "count": 1
+      },
+      {
+        "id": 7,
+        "text": "Use this session token a9f3KlmQ02xPZ91mQwX8",
+        "redacted_text": "Use this session [REDACTED:API_KEY:26]",
+        "count": 1
+      },
+      {
+        "id": 8,
+        "text": "please send it to sara_1998@yahoo.com",
+        "redacted_text": "please send it to [REDACTED:EMAIL:19]",
+        "count": 1
+      },
+      {
+        "id": 9,
+        "text": "Check api_key=7F3dK92LmQ81Zx for me",
+        "redacted_text": "Check [REDACTED:API_KEY:22] for me",
+        "count": 1
+      },
+      {
+        "id": 10,
+        "text": "ip & port number: 192.168.1.10:8080",
+        "redacted_text": "ip & port number: [REDACTED:IPV4:12]:8080",
+        "count": 1
+      },
+      {
+        "id": 11,
+        "text": "an other email address : mitra.shabani+test@gmail.com",
+        "redacted_text": "an other email address : [REDACTED:EMAIL:28]",
+        "count": 1
+      },
+      {
+        "id": 12,
+        "text": "Call me on 703-555-8123 ASAP",
+        "redacted_text": "Call me on [REDACTED:PHONE:12] ASAP",
+        "count": 1
+      },
+      {
+        "id": 13,
+        "text": "mitra [dot] shabani (at) gmail [dot] com",
+        "redacted_text": "mitra [dot] shabani (at) gmail [dot] com",
+        "count": 0
+      },
+      {
+        "id": 14,
+        "text": "WARNING: invalid api token sk_live_83jdk29dk",
+        "redacted_text": "WARNING: invalid api [REDACTED:API_KEY:23]",
+        "count": 1
+      },
+      {
+        "id": 15,
+        "text": "Was 7035558123 your phone number?",
+        "redacted_text": "Was [REDACTED:PHONE:10] your phone number?",
+        "count": 1
+      },
+      {
+        "id": 16,
+        "text": "John.DOE@Example.COM",
+        "redacted_text": "[REDACTED:EMAIL:20]",
+        "count": 1
+      },
+      {
+        "id": 17,
+        "text": "Access key has changed to AKIA9F3KLMQ02X8Z91AB",
+        "redacted_text": "Access key has changed to [REDACTED:CLOUD_ACCESS_KEY:20]",
+        "count": 1
+      },
+      {
+        "id": 18,
+        "text": " Please inform them (703) 555-1111",
+        "redacted_text": " Please inform them ([REDACTED:PHONE:13]",
+        "count": 1
+      },
+      {
+        "id": 19,
+        "text": "https://example.com/reset?email=john.doe@gmail.com",
+        "redacted_text": "https://example.com/reset?email=[REDACTED:EMAIL:18]",
+        "count": 1
+      },
+      {
+        "id": 20,
+        "text": "User contact: helpdesk@support.io",
+        "redacted_text": "User contact: [REDACTED:EMAIL:19]",
+        "count": 1
+      },
+      {
+        "id": 21,
+        "text": "key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.XYZ123.SIGNATURE",
+        "redacted_text": "key: [REDACTED:AUTH_TOKEN:53]",
+        "count": 1
+      },
+      {
+        "id": 22,
+        "text": "ip & subnet mask: 192.168.1.0/24",
+        "redacted_text": "ip & subnet mask: [REDACTED:IPV4:11]/24",
+        "count": 1
+      },
+      {
+        "id": 23,
+        "text": "private network eange: 10.0.0.5",
+        "redacted_text": "private network eange: [REDACTED:IPV4:8]",
+        "count": 1
+      },
+      {
+        "id": 24,
+        "text": "Customer used card 3782 822463 10005",
+        "redacted_text": "Customer used card [REDACTED:CREDIT_CARD:17]",
+        "count": 1
+      },
+      {
+        "id": 25,
+        "text": "card: 4111-1111-1111-1111",
+        "redacted_text": "card: [REDACTED:CREDIT_CARD:19]",
+        "count": 1
+      }
+    ],
+    "found_count": 25
+  }
+]
