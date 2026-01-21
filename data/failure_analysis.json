@@ -8,14 +8,6 @@
     "note": "IP redacted but port number left intact"
   },
   {
-    "id": 13,
-    "true_type": "email",
-    "error_kind": "missed_detection",
-    "pattern": "obfuscated_email",
-    "risk": "high",
-    "note": "Email written as [dot] and (at) not detected"
-  },
-  {
     "id": 14,
     "true_type": "api_key",
     "error_kind": "over_redaction",

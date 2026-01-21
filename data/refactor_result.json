@@ -17,7 +17,7 @@
       {
         "id": 3,
         "text": "Call me at (703) 555-8123 tomorrow",
-        "redacted_text": "Call me at ([REDACTED:PHONE:13] tomorrow",
+        "redacted_text": "Call me@([REDACTED:PHONE:13] tomorrow",
         "count": 1
       },
       {
@@ -77,8 +77,8 @@
       {
         "id": 13,
         "text": "mitra [dot] shabani (at) gmail [dot] com",
-        "redacted_text": "mitra [dot] shabani (at) gmail [dot] com",
-        "count": 0
+        "redacted_text": "[REDACTED:EMAIL:23]",
+        "count": 1
       },
       {
         "id": 14,
@@ -153,6 +153,6 @@
         "count": 1
       }
     ],
-    "found_count": 25
+    "found_count": 26
   }
 ]

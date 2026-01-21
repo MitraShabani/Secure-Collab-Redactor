@@ -22,10 +22,16 @@ REDACTIONS = [
     ("PHONE", PHONE_RE),
 ]
 
+def normalize_obfuscations(t: str) -> str:
+    t = re.sub(r"\s*\(at\)\s*|\s*\[at\]\s*|\s+at\s+", "@", t, flags=re.IGNORECASE)
+    t = re.sub(r"\s*\(dot\)\s*|\s*\[dot\]\s*|\s+dot\s+", ".", t, flags=re.IGNORECASE)
+    return t
+
 def redact(text: str) -> Tuple[str, int]:
     """Run all patterns on text and replace matches with [REDACTED:<LABEL>:<len>]."""
 
     redactionCounter = 0
+    text = normalize_obfuscations(text)
     redacted = text
 
     # replace matches with a labeled token
