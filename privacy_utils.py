@@ -5,6 +5,8 @@ from typing import Tuple
 EMAIL_RE = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 PHONE_RE = re.compile(r"\b(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}\b")
 IPV4_RE = re.compile(r"\b((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)\b")
+IP_PORT_RE = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}:\d{1,5}\b")
+IP_CIDR_RE = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}/\d{1,2}\b")
 API_KV_RE = re.compile(r"\bapi[_-]?key\s*=\s*[A-Za-z0-9_\-]{8,}\b", re.IGNORECASE)
 API_KEY_RE = re.compile(r"\b(?:(?:api|secret|token|key)[_\-:]?\s*[A-Za-z0-9_\-]{16,})\b", re.IGNORECASE)
 CC_RE = re.compile(r"\b(?:\d[ -]*?){13,19}\b")
@@ -18,6 +20,8 @@ REDACTIONS = [
     ("API_KEY", API_KEY_RE),
     ("EMAIL", EMAIL_RE),
     ("CREDIT_CARD", CC_RE),
+    ("IP_SUBNET", IP_CIDR_RE),
+    ("IP_WITH_PORT", IP_PORT_RE),
     ("IPV4", IPV4_RE),
     ("PHONE", PHONE_RE),
 ]

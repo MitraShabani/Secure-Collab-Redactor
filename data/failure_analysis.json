@@ -1,26 +1,10 @@
 [
   {
-    "id": 10,
-    "true_type": "ip_with_port",
-    "error_kind": "partial_redaction",
-    "pattern": "ipv4_with_port",
-    "risk": "medium",
-    "note": "IP redacted but port number left intact"
-  },
-  {
     "id": 14,
     "true_type": "api_key",
     "error_kind": "over_redaction",
     "pattern": "keyword_removed_with_secret",
     "risk": "medium",
     "note": "Non-sensitive word 'token' removed along with API key, reducing readability"
-  },
-  {
-    "id": 22,
-    "true_type": "ip_with_subnet",
-    "error_kind": "partial_redaction",
-    "pattern": "ipv4_cidr",
-    "risk": "medium",
-    "note": "IP redacted but subnet mask left visible"
   }
 ]

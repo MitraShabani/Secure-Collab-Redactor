@@ -59,7 +59,7 @@
       {
         "id": 10,
         "text": "ip & port number: 192.168.1.10:8080",
-        "redacted_text": "ip & port number: [REDACTED:IPV4:12]:8080",
+        "redacted_text": "ip & port number: [REDACTED:IP_WITH_PORT:17]",
         "count": 1
       },
       {
@@ -131,7 +131,7 @@
       {
         "id": 22,
         "text": "ip & subnet mask: 192.168.1.0/24",
-        "redacted_text": "ip & subnet mask: [REDACTED:IPV4:11]/24",
+        "redacted_text": "ip & subnet mask: [REDACTED:IP_SUBNET:14]",
         "count": 1
       },
       {
