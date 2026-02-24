@@ -1,5 +1,6 @@
+## UI LAYER ##
 import streamlit as st
-from privacy_utils import redact
+from hybrid_redaction import process_batch
 from storage import saveReport
 
 st.set_page_config(page_title="Privacy-Safe-Collab", page_icon="🛡️", layout="wide")
@@ -47,31 +48,7 @@ with tabs[0]:
     # Button
     if st.button("🔍 Redaction"):
 
-        # orig_text can be string or list
-        texts = orig_text if isinstance(orig_text, list) else [orig_text]
-
-        results = []
-        total_count = 0
-
-        for i, text in enumerate(texts, start=1):
-
-            if not isinstance(text, str):
-                text = str(text)
-
-            redacted_text, predicted_sensitive = redact(text)
-            redacted_text, count = redact(text)
-            total_count += int(count)
-
-            results.append({
-                "id": i,
-                "text": text,
-                "redacted_text": redacted_text,
-                "count": int(count)
-            })
-            # redacted_text, predicted_sensitive = redact(text)
-            # st.write("DEBUG type:", type(predicted_sensitive), "value:", predicted_sensitive)
-
-
+        results, total_count = process_batch(orig_text)
         st.json(results)
 
         st.session_state["preview"] = {
@@ -113,7 +90,7 @@ with tabs[0]:
             st.code(previewText["original"], language="text")
         with col2:
             st.write("**Redacted (to be saved)**")
-            st.code(previewText["results"], language="text")
+            st.json(previewText["results"])
 
         st.info("Click **Save Report**. Otherwise, edit and preview again.")
 
