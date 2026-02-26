@@ -3,7 +3,7 @@
         "id": 1,
         "text": "Error reported by john_doe92@gmail.com from 192.168.1.10",
         "true_sensitive": [
-            "email",
+            "Email",
             "ip"
         ]
     },
@@ -18,7 +18,7 @@
         "id": 3,
         "text": "Call me at (703) 555-8123 tomorrow",
         "true_sensitive": [
-            "phone"
+            "Phone"
         ]
     },
     {
@@ -38,7 +38,7 @@
     {
         "id": 6,
         "text": "We should send our request to admin@mail.company.org",
-        "true_sensitive": ["email"]
+        "true_sensitive": ["Email"]
     },
     {
         "id": 7,
@@ -48,7 +48,7 @@
     {
         "id": 8,
         "text": "please send it to sara_1998@yahoo.com",
-        "true_sensitive": ["email"]
+        "true_sensitive": ["Email"]
     },
     {
         "id": 9,
@@ -63,17 +63,17 @@
     {
         "id": 11,
         "text": "an other email address : mitra.shabani+test@gmail.com",
-        "true_sensitive": ["email"]
+        "true_sensitive": ["Email"]
     },
     {
         "id": 12,
         "text": "Call me on 703-555-8123 ASAP",
-        "true_sensitive": ["phone"]
+        "true_sensitive": ["Phone"]
     },
     {
         "id": 13,
         "text": "mitra [dot] shabani (at) gmail [dot] com",
-        "true_sensitive": ["email"]
+        "true_sensitive": ["Email"]
     },
     {
         "id": 14,
@@ -83,12 +83,12 @@
     {
         "id": 15,
         "text": "Was 7035558123 your phone number?",
-        "true_sensitive": ["phone"]
+        "true_sensitive": ["Phone"]
     },
     {
         "id": 16,
         "text": "John.DOE@Example.COM",
-        "true_sensitive": ["email"]
+        "true_sensitive": ["Email"]
     },
     {
         "id": 17,
@@ -98,17 +98,17 @@
     {
         "id": 18,
         "text": " Please inform them (703) 555-1111",
-        "true_sensitive": ["phone"]
+        "true_sensitive": ["Phone"]
     },
     {
         "id": 19,
         "text": "https://example.com/reset?email=john.doe@gmail.com",
-        "true_sensitive": ["email"]
+        "true_sensitive": ["Email"]
     },
     {
         "id": 20,
         "text": "User contact: helpdesk@support.io",
-        "true_sensitive": ["email"]
+        "true_sensitive": ["Email"]
     },
     {
         "id": 21,
@@ -134,5 +134,55 @@
         "id": 25,
         "text": "card: 4111-1111-1111-1111",
         "true_sensitive": ["credit_card"]
+    },
+        {
+        "id": 26,
+        "text": "Dr. Sarah Johnson met Ali Rezaei in Washington.",
+        "true_sensitive": ["Person"]
+    },
+        {
+        "id": 27,
+        "text": "John works at Google and studies at George Mason University.",
+        "true_sensitive": ["Person" ,"Org", "Location"]
+    },
+        {
+        "id": 28,
+        "text": "My email is mitra.test@example.com and I live in Fairfax, Virginia.",
+        "true_sensitive": ["Email", "Location"]
+    },
+        {
+        "id": 29,
+        "text": "Yesterday I talked to Nova and Apple was tasty.",
+        "true_sensitive": ["False Positives"]
+    },
+        {
+        "id": 30,
+        "text": "My address is in New York.",
+        "true_sensitive": ["Location"]
+    },
+            {
+        "id": 31,
+        "text": "My patient has diabetes, he was also diagnosed with cancer.",
+        "true_sensitive": ["MEDICAL"]
+    },
+            {
+        "id": 32,
+        "text": "User Mitra Smith logged in from Fairfax at 10pm",
+        "true_sensitive": ["Person", "Location"]
+    },
+            {
+        "id": 33,
+        "text": "Amazon is a river. Jordan is a country",
+        "true_sensitive": ["False Positives"]
+    },
+                {
+        "id": 34,
+        "text": "john (at) gmail (dot) com,  phone: five five five one two three four",
+        "true_sensitive": ["Email", "Phone"]
+    },
+                {
+        "id": 35,
+        "text": "Mitra is from Iran. She has moved to Jordan at 30",
+        "true_sensitive": ["Person", "Location"]
     }
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "title": "refactor_result",
+    "title": "test",
     "redacted_text": [
       {
         "id": 1,
@@ -151,8 +151,68 @@
         "text": "card: 4111-1111-1111-1111",
         "redacted_text": "card: [REDACTED:CREDIT_CARD:19]",
         "count": 1
+      },
+      {
+        "id": 26,
+        "text": "Dr. Sarah Johnson met Ali Rezaei in Washington.",
+        "redacted_text": "Dr. ************* met ********** in **********.",
+        "count": 3
+      },
+      {
+        "id": 27,
+        "text": "John works at Google and studies at George Mason University.",
+        "redacted_text": "**** works@****** and studies@***********************.",
+        "count": 3
+      },
+      {
+        "id": 28,
+        "text": "My email is mitra.test@example.com and I live in Fairfax, Virginia.",
+        "redacted_text": "My email is [REDACTED:EMAIL:22] and I live in *******, ********.",
+        "count": 3
+      },
+      {
+        "id": 29,
+        "text": "Yesterday I talked to Nova and Apple was tasty.",
+        "redacted_text": "Yesterday I talked to Nova and ***** was tasty.",
+        "count": 1
+      },
+      {
+        "id": 30,
+        "text": "My address is in New York.",
+        "redacted_text": "My address is in ********.",
+        "count": 1
+      },
+      {
+        "id": 31,
+        "text": "My patient has diabetes, he was also diagnosed with cancer.",
+        "redacted_text": "My patient has diabetes, he was also diagnosed with cancer.",
+        "count": 0
+      },
+      {
+        "id": 32,
+        "text": "User Mitra Smith logged in from Fairfax at 10pm",
+        "redacted_text": "User *********** logged in from Fairfax@10pm",
+        "count": 2
+      },
+      {
+        "id": 33,
+        "text": "Amazon is a river. Jordan is a country",
+        "redacted_text": "****** is a river. ****** is a country",
+        "count": 2
+      },
+      {
+        "id": 34,
+        "text": "john (at) gmail (dot) com,  phone: five five five one two three four",
+        "redacted_text": "[REDACTED:EMAIL:14],  phone: five five five one two three four",
+        "count": 1
+      },
+      {
+        "id": 35,
+        "text": "Mitra is from Iran. She has moved to Jordan at 30",
+        "redacted_text": "***** is from ****. She has moved to ******@30",
+        "count": 4
       }
     ],
-    "found_count": 26
+    "found_count": 46
   }
 ]
