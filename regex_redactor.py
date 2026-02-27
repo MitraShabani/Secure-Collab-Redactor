@@ -28,8 +28,8 @@ REDACTIONS = [
 ]
 
 def normalize_obfuscations(t: str) -> str:
-    t = re.sub(r"\s*\(at\)\s*|\s*\[at\]\s*|\s+at\s+", "@", t, flags=re.IGNORECASE)
-    t = re.sub(r"\s*\(dot\)\s*|\s*\[dot\]\s*|\s+dot\s+", ".", t, flags=re.IGNORECASE)
+    t = re.sub(r"\s*\(at\)\s*|\s*\[at\]\s*", "@", t, flags=re.IGNORECASE)
+    t = re.sub(r"\s*\(dot\)\s*|\s*\[dot\]\s*", ".", t, flags=re.IGNORECASE)
     return t
 
 def redact(text: str) -> Tuple[str, int]:

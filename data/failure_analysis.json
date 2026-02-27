@@ -8,14 +8,6 @@
     "note": "Non-sensitive word 'token' removed along with API key, reducing readability"
   },
   {
-    "id": 27,
-    "true_type": ["Person" ,"Org"],
-    "error_kind": "normalization_error",
-    "pattern": ["at Google", "at George Mason University"],
-    "risk": "medium",
-    "note": "Change the preposition 'at' to an @ sign"
-  },
-  {
     "id": 29,
     "true_type": ["Person", "Location"],
     "error_kind": ["false_negative", "false_positive"],
@@ -32,14 +24,6 @@
     "note": "Location redacted despite absence of identifiable person."
   },
   {
-    "id": 32,
-    "true_type": ["Person", "Location"],
-    "error_kind": "false_negative",
-    "pattern": "Fairfax",
-    "risk": "medium",
-    "note": "Change the preposition 'at' to an @ sign. location remained unredacted."
-  },
-  {
     "id": 33,
     "true_type": "Location",
     "error_kind": "false_positive",
@@ -54,14 +38,6 @@
     "pattern": "five five five one two three four",
     "risk": "high",
     "note": "Regex-based detector failed on word-based phone number representation."
-  },
-  {
-  "id": 35,
-  "true_type": ["Person", "Location"],
-  "error_kind": "normalization_error",
-  "pattern": "at 30",
-  "risk": "medium",
-  "note": "Change the preposition 'at' to an @ sign."
-}
+  }
 
 ]
