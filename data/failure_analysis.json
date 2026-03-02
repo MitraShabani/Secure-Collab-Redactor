@@ -8,22 +8,6 @@
     "note": "Rare name 'Nova' not detected (false negative); 'Apple' misclassified as entity in fruit context (false positive)"
   },
   {
-    "id": 30,
-    "true_type": "Location",
-    "error_kind": "false_positive",
-    "pattern": "New York",
-    "risk": "low",
-    "note": "Location redacted despite absence of identifiable person."
-  },
-  {
-    "id": 33,
-    "true_type": "Location",
-    "error_kind": "false_positive",
-    "pattern": ["Amazon","Jordan"],
-    "risk": "low",
-    "note": "misclassified as entities"
-  },
-  {
     "id": 34,
     "true_type": "Phone",
     "error_kind": "false_negative",

@@ -23,6 +23,7 @@ def detect_and_redact(text: str, min_score: float = 0.70) -> Dict[str, Any]:
 
     ner = get_ner()
     spans = []
+    persons_present = False
 
     for entity in ner(text):
 
@@ -34,6 +35,12 @@ def detect_and_redact(text: str, min_score: float = 0.70) -> Dict[str, Any]:
                 "score": float(entity["score"]),
                 "source": "NER"
             })
+        if entity["entity_group"] == "PER":
+            persons_present = True
+
+    # In-place filtering: remove LOC spans if no person
+    if not persons_present:
+        spans[:] = [s for s in spans if s["label"] != "LOC"]
 
     return spans
 

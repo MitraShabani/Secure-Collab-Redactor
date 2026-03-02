@@ -11,8 +11,8 @@
       {
         "id": 2,
         "text": "API key sk-39dkf93jf93jf was exposed in the logs",
-        "redacted_text": "API [REDACTED:API_KEY:20] was exposed in the logs",
-        "count": 1
+        "redacted_text": "API key [REDACTED:API_KEY:16] was exposed in the logs",
+        "count": 0
       },
       {
         "id": 3,
@@ -41,8 +41,8 @@
       {
         "id": 7,
         "text": "Use this session token a9f3KlmQ02xPZ91mQwX8",
-        "redacted_text": "Use this session [REDACTED:API_KEY:26]",
-        "count": 1
+        "redacted_text": "Use this session token [REDACTED:API_KEY:20]",
+        "count": 0
       },
       {
         "id": 8,
@@ -53,8 +53,8 @@
       {
         "id": 9,
         "text": "Check api_key=7F3dK92LmQ81Zx for me",
-        "redacted_text": "Check [REDACTED:API_KEY:22] for me",
-        "count": 1
+        "redacted_text": "Check api_key=7F3dK92LmQ81Zx for me",
+        "count": 0
       },
       {
         "id": 10,
@@ -83,8 +83,8 @@
       {
         "id": 14,
         "text": "WARNING: invalid api token sk_live_83jdk29dk",
-        "redacted_text": "WARNING: invalid api [REDACTED:API_KEY:23]",
-        "count": 1
+        "redacted_text": "WARNING: invalid api token [REDACTED:API_KEY:17]",
+        "count": 0
       },
       {
         "id": 15,
@@ -167,8 +167,8 @@
       {
         "id": 28,
         "text": "My email is mitra.test@example.com and I live in Fairfax, Virginia.",
-        "redacted_text": "My email is [REDACTED:EMAIL:22] and I live in *******, ********.",
-        "count": 3
+        "redacted_text": "My email is [REDACTED:EMAIL:22] and I live in Fairfax, Virginia.",
+        "count": 1
       },
       {
         "id": 29,
@@ -179,8 +179,8 @@
       {
         "id": 30,
         "text": "My address is in New York.",
-        "redacted_text": "My address is in ********.",
-        "count": 1
+        "redacted_text": "My address is in New York.",
+        "count": 0
       },
       {
         "id": 31,
@@ -197,8 +197,8 @@
       {
         "id": 33,
         "text": "Amazon is a river. Jordan is a country",
-        "redacted_text": "****** is a river. ****** is a country",
-        "count": 2
+        "redacted_text": "Amazon is a river. Jordan is a country",
+        "count": 0
       },
       {
         "id": 34,
@@ -213,6 +213,6 @@
         "count": 4
       }
     ],
-    "found_count": 47
+    "found_count": 38
   }
 ]
