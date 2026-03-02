@@ -32,6 +32,7 @@ def normalize_obfuscations(t: str) -> str:
     t = re.sub(r"\s*\(dot\)\s*|\s*\[dot\]\s*", ".", t, flags=re.IGNORECASE)
     return t
 
+
 def redact(text: str) -> Tuple[str, int]:
     """Run all patterns on text and replace matches with [REDACTED:<LABEL>:<len>]."""
 
@@ -41,11 +42,26 @@ def redact(text: str) -> Tuple[str, int]:
 
     # replace matches with a labeled token
     for label, pattern in REDACTIONS:
+
         def repl(m):
             nonlocal redactionCounter
             redactionCounter += 1
             return f"[REDACTED:{label}:{len(m.group(0))}]"
 
-        redacted = pattern.sub(repl, redacted)
+        def repl_api_key(m):
+            # m is a match object from the regex, m.group(0) gives the entire string that matched regex.
+            # We want to replace only the actual key
+            # Assuming key is the last group of chars
+            key_match = re.search(r"[A-Za-z0-9_\-]{16,}", m.group(0))
+            if key_match:
+                key = key_match.group(0)
+                return m.group(0).replace(key, f"[REDACTED:API_KEY:{len(key)}]")
+            return m.group(0)
+
+
+        if label == "API_KEY":
+            redacted = pattern.sub(repl_api_key, redacted)
+        else:
+            redacted = pattern.sub(repl, redacted)
 
     return redacted, redactionCounter

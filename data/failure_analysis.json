@@ -1,13 +1,5 @@
 [
   {
-    "id": 14,
-    "true_type": "api_key",
-    "error_kind": "over_redaction",
-    "pattern": "keyword_removed_with_secret",
-    "risk": "medium",
-    "note": "Non-sensitive word 'token' removed along with API key, reducing readability"
-  },
-  {
     "id": 29,
     "true_type": ["Person", "Location"],
     "error_kind": ["false_negative", "false_positive"],
