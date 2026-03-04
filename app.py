@@ -49,7 +49,6 @@ with tabs[0]:
     if st.button("🔍 Redaction"):
 
         results, total_count = process_batch(orig_text)
-        st.json(results)
 
         st.session_state["preview"] = {
             "title": title,

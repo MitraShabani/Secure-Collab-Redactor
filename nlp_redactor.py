@@ -25,9 +25,18 @@ def detect_and_redact(text: str, min_score: float = 0.70) -> Dict[str, Any]:
     spans = []
     persons_present = False
 
+    LABEL_THRESHOLDS = {
+        "PER": 0.70,
+        "LOC": 0.75,
+        "ORG": 0.85
+    }
+
     for entity in ner(text):
 
-        if entity["score"] >= min_score:  # only accept this detection if the model is confident enough.
+        label = entity["entity_group"]
+        threshold = LABEL_THRESHOLDS.get(label, min_score) # If this label exists in the dictionary, use its value. Otherwise, use min_score
+
+        if entity["score"] >= threshold:  # only accept this detection if the model is confident enough.
             spans.append({
                 "start": entity["start"],
                 "end": entity["end"],
@@ -35,12 +44,12 @@ def detect_and_redact(text: str, min_score: float = 0.70) -> Dict[str, Any]:
                 "score": float(entity["score"]),
                 "source": "NER"
             })
-        if entity["entity_group"] == "PER":
+        if label == "PER":
             persons_present = True
 
-    # In-place filtering: remove LOC spans if no person
+    # In-place filtering: remove LOC and ORG spans if no person
     if not persons_present:
-        spans[:] = [s for s in spans if s["label"] != "LOC"]
+        spans[:] = [s for s in spans if s["label"] != "LOC" and s["label"] != "ORG"]
 
     return spans
 
